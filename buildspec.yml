@@ -1,14 +1,19 @@
- version: 0.2
+version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      java: 
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
   build:
     commands:
-      - echo Build started on date
+      - echo Build started 
       - mvn clean package
   post_build:
     commands:
-      - echo Build completed on date
+      - echo Build completed succesfully
 artifacts:
   files:
     - target/emp-service.jar
-  discard-paths:yes
